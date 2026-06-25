@@ -2,12 +2,14 @@ from cvzone.ColorModule import ColorFinder
 import cv2
 import cvzone
 
+from cvzone.Utils import findContours
+
 #Creates an instance of the ColorFinder class with trackBar set True
-myColorFinder = ColorFinder(trackBar=True)
+myColorFinder = ColorFinder(trackBar= False)
 
 #Initialize the video capture using OpenCV
 #Using the 3rd cam (index 2). Adjust index if you have multiple cameras
-cap = cv2.VideoCapture(1)
+cap = cv2.VideoCapture(0)
 
 #Set the dimensions of the camera feed to 640 x 480
 cap.set(3, 640)
@@ -17,7 +19,7 @@ cap.set(4, 480)
 # 'hmin', 'smin', 'vmin' are the min values for Hue, Sat, and Value
 # 'hmax', 'smax', 'vmax' are the max values for Hue, Sat, and Value
 
-hsvVals = {'hmin': 17, 'smin': 112, 'vmin': 44, 'hmax': 29, 'smax': 255, 'vmax': 255}
+hsvVals = {'hmin': 14, 'smin': 100, 'vmin': 21, 'hmax': 61, 'smax': 230, 'vmax': 255}
 
 #Main loop to continuously get frames from the camera
 while True:
